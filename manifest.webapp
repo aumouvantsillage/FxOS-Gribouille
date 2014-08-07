@@ -1,0 +1,15 @@
+{
+    "name": "Gribouille",
+    "version": "0.1",
+    "description": "Hand-writing/drawing demo",
+    "developer": {
+        "name": "Guillaume Savaton",
+        "url": "http://guillaume.baierouge.fr"
+    },
+    "launch_path": "/index.html",
+    "icons": {
+        "60": "/icons/60.png",
+        "128": "/icons/128.png"
+    },
+    "fullscreen": true
+}
