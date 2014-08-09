@@ -5,7 +5,7 @@ window.requestAnimationFrame =
     window.msRequestAnimationFrame;
     
 
-var Painter = {
+Gribouille.Painter = {
     
     init: function (target, options) {
         this.target = target;

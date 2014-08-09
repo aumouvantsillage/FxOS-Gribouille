@@ -1,14 +1,12 @@
 
-var svgNs = "http://www.w3.org/2000/svg";
-    
-var CanvasPainter = Object.create(Painter);
+Gribouille.CanvasPainter = Object.create(Gribouille.Painter);
 
-CanvasPainter.init = function (target, options) {
-    Painter.init.call(this, target, options);
+Gribouille.CanvasPainter.init = function (target, options) {
+    Gribouille.Painter.init.call(this, target, options);
     this.context = target.getContext("2d");
 };
 
-CanvasPainter.repaint = function () {
+Gribouille.CanvasPainter.repaint = function () {
     this.context.beginPath();
     this.context.strokeStyle = this.options.pathStroke;
     this.context.lineWidth = this.options.pathStrokeWidth;

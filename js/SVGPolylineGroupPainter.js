@@ -1,13 +1,13 @@
 
-var SVGPolylineGroupPainter = Object.create(SVGPainter);
+Gribouille.SVGPolylineGroupPainter = Object.create(Gribouille.SVGPainter);
 
-SVGPolylinePainter.init = function (target, options) {
-    SVGPainter.init.call(this, target, options);
+Gribouille.SVGPolylinePainter.init = function (target, options) {
+    Gribouille.SVGPainter.init.call(this, target, options);
     this.svgGroup = null;
 };
 
-SVGPolylineGroupPainter.repaint = function () {
-    SVGPainter.repaint.call(this);
+Gribouille.SVGPolylineGroupPainter.repaint = function () {
+    Gribouille.SVGPainter.repaint.call(this);
     
     if (this.index === 0) {
         this.svgGroup = document.createElementNS(this.svgNs, "g");

@@ -7,15 +7,23 @@
         
         <meta name="viewport" content="width=device-width, user-scalable=no">
         
+        <script src="js/main.js"></script>
         <script src="js/Painter.js"></script>
         <script src="js/SVGPainter.js"></script>
         <script src="js/SVGPolylinePainter.js"></script>
         <script src="js/SVGPolylineGroupPainter.js"></script>
         <script src="js/CanvasPainter.js"></script>
-        <script src="js/main.js"></script>
     </head>
     <body>
-        <svg xmlns="http://www.w3.org/2000/svg"></svg>
-        <canvas></canvas>
+        <select>
+            <option value="none"><em>Select a painter&hellip;</em></option>
+            <option value="Painter">Painter</option>
+            <option value="SVGPainter">SVGPainter</option>
+            <option value="SVGPolylinePainter">SVGPolylinePainter</option>
+            <option value="SVGPolylineGroupPainter">SVGPolylineGroupPainter</option>
+            <option value="CanvasPainter">CanvasPainter</option>
+        </select>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display:none;"></svg>
+        <canvas style="display:none;"></canvas>
     </body>
 </html>

@@ -1,10 +1,10 @@
 
-var SVGPainter = Object.create(Painter);
+Gribouille.SVGPainter = Object.create(Gribouille.Painter);
 
-SVGPainter.svgNs = "http://www.w3.org/2000/svg";
+Gribouille.SVGPainter.svgNs = "http://www.w3.org/2000/svg";
     
-SVGPainter.init = function (target, options) {
-    Painter.init.call(this, target, options);
+Gribouille.SVGPainter.init = function (target, options) {
+    Gribouille.Painter.init.call(this, target, options);
     
     this.svgCircle = document.createElementNS(this.svgNs, "circle");
     this.svgCircle.setAttribute("fill", options.circleFill || "red");
@@ -13,13 +13,13 @@ SVGPainter.init = function (target, options) {
     target.appendChild(this.svgCircle);
 };
 
-SVGPainter.repaint = function () {
+Gribouille.SVGPainter.repaint = function () {
     this.svgCircle.style.display = this.drawing ? "inline" : "none";
     this.svgCircle.setAttribute("cx", this.points[this.points.length - 1].x);
     this.svgCircle.setAttribute("cy", this.points[this.points.length - 1].y);
 };
 
-SVGPainter.getLocalXY = function (clientX, clientY) {
+Gribouille.SVGPainter.getLocalXY = function (clientX, clientY) {
     var p = this.target.createSVGPoint();
     p.x = clientX;
     p.y = clientY;

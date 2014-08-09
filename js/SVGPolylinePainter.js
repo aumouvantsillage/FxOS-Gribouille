@@ -1,13 +1,13 @@
 
-var SVGPolylinePainter = Object.create(SVGPainter);
+Gribouille.SVGPolylinePainter = Object.create(Gribouille.SVGPainter);
 
-SVGPolylinePainter.init = function (target, options) {
-    SVGPainter.init.call(this, target, options);
+Gribouille.SVGPolylinePainter.init = function (target, options) {
+    Gribouille.SVGPainter.init.call(this, target, options);
     this.svgPolyline = null;
 };
 
-SVGPolylinePainter.repaint = function () {
-    SVGPainter.repaint.call(this);
+Gribouille.SVGPolylinePainter.repaint = function () {
+    Gribouille.SVGPainter.repaint.call(this);
 
     var svgPolylinePoints;
     if (this.index === 0) {

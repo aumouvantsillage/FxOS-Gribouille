@@ -1,6 +1,11 @@
-window.addEventListener("load", function () {
+var Gribouille = {};
 
-    var painter = Painter;
+function selectPainter(name) {
+    var painter = Gribouille[name];
+
+    if (painter !== Gribouille.Painter && !Gribouille.Painter.isPrototypeOf(painter)) {
+        painter = Gribouille.Painter;
+    }
     
     var options = {
         pathStroke: "purple",
@@ -13,12 +18,12 @@ window.addEventListener("load", function () {
     var svg = document.querySelector("svg");
     var canvas = document.querySelector("canvas");
     
-    if (painter === SVGPainter || SVGPainter.isPrototypeOf(painter)) {
-        canvas.style.display = "none";
+    if (painter === Gribouille.SVGPainter || Gribouille.SVGPainter.isPrototypeOf(painter)) {
+        svg.style.display = "inline";
         painter.init(svg, options);
     }
     else {
-        svg.style.display = "none";
+        canvas.style.display = "inline";
         painter.init(canvas, options);
     }
     
@@ -31,5 +36,12 @@ window.addEventListener("load", function () {
     window.addEventListener("resize", resize, false);
     
     painter.run();
+}
 
+window.addEventListener("load", function () {
+    var select = document.querySelector("select");
+    select.addEventListener("change", function (evt) {
+        select.style.display = "none";
+        selectPainter(select.value);
+    }, false);    
 }, false);
