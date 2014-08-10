@@ -39,9 +39,8 @@ function selectPainter(name) {
 }
 
 window.addEventListener("load", function () {
-    var select = document.querySelector("select");
-    select.addEventListener("change", function (evt) {
-        select.style.display = "none";
-        selectPainter(select.value);
-    }, false);    
+    document.querySelector("button").addEventListener("click", function () {
+        document.querySelector("div").style.display = "none";
+        selectPainter(document.querySelector("select").value);
+    }, false);
 }, false);

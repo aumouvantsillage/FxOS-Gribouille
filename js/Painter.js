@@ -86,7 +86,7 @@ Gribouille.Painter = {
         this.points.push({
             x: p.x,
             y: p.y,
-            t: Date.now()
+            t: performance.now()
         });
     },
     
